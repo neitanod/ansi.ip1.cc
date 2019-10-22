@@ -1,0 +1,16 @@
+<html>
+    <body style="background-color: black; color: white;">
+        <script src="jquery-3.4.1.min.js"></script>
+        <script src="ansi_up.js" crossorigin="anonymous"></script>
+        <pre id="contents" style="background-color: black; color: white;"></pre>
+        <script>
+            console.log(top.location.hash.substr(1));
+            $.get(top.location.hash.substr(1)).done(function(data){
+                console.log(data);
+                var ansi_up = new AnsiUp;
+                var html = ansi_up.ansi_to_html(data);
+                $("#contents").html(html);
+            });
+        </script>
+    </body>
+</html>
