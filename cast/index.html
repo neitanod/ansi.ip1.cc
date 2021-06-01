@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="asciinema-player.css" />
+    </head>
+    <body>
+        <style>
+            @font-face {
+            font-family: 'Patched';
+            src: url('ubuntu-mono-patched.woff') format('woff');
+            }
+            body {
+                background-color: black;
+            }
+            .asciinema-terminal {
+                font-family: Patched !important;
+            }
+        </style>
+        <asciinema-player src="demo.cast" id="player"></asciinema-player>
+        <script>
+            var src = top.location.hash.substr(1);
+            console.log(top.location.hash.substr(1));
+            if(src != "") {
+                document.getElementById("player").setAttribute("src", src);
+            }
+        </script>
+        <script src="asciinema-player.js"></script>
+    </body>
+</html>
